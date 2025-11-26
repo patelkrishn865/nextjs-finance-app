@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'ibicpdswdxhgyvgvbhfm.supabase.co',
+      port: ''
+    }]
+  }
 };
 
 export default nextConfig;

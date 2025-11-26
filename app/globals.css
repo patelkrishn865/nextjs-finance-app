@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
+/* 🌙 Default = Dark Theme */
+.link {
+  color: var(--link);
+  transition: color 0.25s ease;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: var(--color-gray-900);
+  --text: var(--color-gray-300);
+  --label: var(--color-gray-800);
+  --link: var(--color-gray-300);
+  --hr: var(--color-gray-800);
+  --ghost-bg: var(--color-gray-900);
+  --ghost-hover: var(--color-gray-800);
+  --ghost1-bg: var(--color-black);
+  --ghost1-hover: var(--color-gray-900);
+  --ghost2-bg: var(--color-gray-900);
+  --danger-bg: var(--color-red-700);
+  --danger-text: var(--color-white);
+  --danger-hover: var(--color-red-800)
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="light"] {
+  --bg: var(--color-white);
+  --text: var(--color-gray-700);
+  --label: var(--color-gray-800);
+  --link: var(--color-gray-700);
+  --hr: var(--color-gray-200);
+  --ghost-bg: var(--color-gray-100);
+  --ghost-hover: var(--color-gray-200);
+  --ghost1-bg: var(--color-gray-200);
+  --ghost1-hover: var(--color-gray-300);
+  --ghost2-bg: var(--color-gray-100);
+  --danger-bg: var(--color-red-500);
+  --danger-text: var(--color-white);
+  --danger-hover: var(--color-red-700)
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
+/* 🧭 Body Layout + Colors */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply container mx-auto max-w-2xl font-sans leading-relaxed;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+/* ─── Horizontal Line ─── */
+hr {
+  @apply my-8 border-0 h-px;
+  background-color: var(--hr);
+}
+
